@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scrolling animation</title>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<style>
+*
+{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;	
+}
+html
+{
+	
+}
+body {
+    background-color: #eaeaea;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+}
+
+.text-center
+{
+	text-align:center;
+}
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+header {
+    height: 550px;
+    background-color: #282626;
+	background-image: url(http://loremflickr.com/1000/600);
+	position:relative;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center
+}
+header:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.69);
+    z-index: 1;
+}
+.header-content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	position:relative;
+	z-index:100
+}
+.header-content img
+{
+	border-radius:50%;
+	margin:30px 20px;	
+}
+.header-content h4 {
+    color: white;
+    font-size: 26px;
+}
+section
+{
+	background-color:#FFF;
+	padding:15px;
+	height:1000px;
+}
+.cation-link {
+    display: inline-block;
+    background-color: #FF9800;
+    padding: 7px 15px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 39px;
+}
+.animate-arrow
+{
+	position:relative;
+	font-size:25px;
+	animation:arrow 800ms ease-in-out 0s infinite;
+}
+.floating-box
+{
+	margin-top:80px;
+	
+}
+.floating-box img {
+    display: block;
+	transition:all 300ms ease-in-out
+}
+.floating-box span {
+    display: block;
+    margin-top: 0px;
+    font-weight: 500;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.44);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.post {
+    position: relative;
+    width: 150px;
+	height: 150px;
+    margin: 0 auto;
+	overflow:hidden;
+	 border-radius: 50%;
+	 z-index:1;
+	 cursor:pointer;
+	 transition:all 300ms linear;
+	 margin-bottom:50px
+}
+.post:hover img
+{
+	transform:scale(1.2);
+}
+.row {
+    margin: 0px -15px;
+}
+.row:after, .row:before
+{
+	content:"";
+	clear:both;
+	display:table;
+}
+.post-1 {
+    transform: translate(0px,0px);
+	
+}
+.post-3 {
+    transform: translate(0px,0px);
+	
+}
+.col-4
+{
+	float: left;
+    width: 33.33%;
+    padding: 0px 10px;
+	
+}
+
+@keyframes arrow
+{
+	0%
+	{
+		transform:translateY(7px)
+	}
+	50%
+	{
+		transform:translateY(0px)
+	}
+	100%
+	{
+		transform:translateY(7px)
+	}
+}
+</style>
+</head>
+
+<body>
+ 		<div class="wrapper">
+        	<header>
+            	<div class="header-content">
+                	<div class="img-box">
+                	<img src="http://placekitten.com/80/80" class="img1">
+                    <img src="http://placekitten.com/80/80" class="img1">
+                    </div>
+                    <h4>Simple Parallax</h4>
+                    <a href="#" class="cation-link">Have a nice day</a>
+                </div>
+            </header>
+            
+            <section class="text-center">
+            	<h4>Scroll Space . Scroll Down</h4>
+                <i class="fa fa-angle-double-down animate-arrow" aria-hidden="true"></i>
+                
+                <div class="floating-box box-1">
+                	<div class="row">
+                    	<div class="col-4">
+                        	<div class="post post-1">
+                                <img src="http://loremflickr.com/150/150?random=1">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                         
+                    <div class="col-4">
+                    	<div class="post post-2">
+                                <img src="http://loremflickr.com/150/150?random=2">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                    
+                    
+                    <div class="col-4">
+                    	<div class="post post-3">
+                                <img src="http://loremflickr.com/150/150?random=3">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                    </div>
+                    
+                    
+                    </div>
+                    
+                    <div class="floating-box box-2 ">
+                	
+                    
+                    <div class="row">
+                    	<div class="col-4">
+                        	<div class="post post-4">
+                                <img src="http://loremflickr.com/150/150?random=4">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                         
+                    <div class="col-4">
+                    	<div class="post post-5">
+                                <img src="http://loremflickr.com/150/150?random=5">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                    
+                    
+                    <div class="col-4">
+                    	<div class="post post-6">
+                                <img src="http://loremflickr.com/150/150?random=6">
+                                <span>Post Title</span>
+                            </div>
+                   		 </div>
+                    </div>
+                    </div>
+                	
+                </div>
+                
+            </section>
+        
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        	
+        <script>
+			$(window).scroll(function()
+			{
+					var scroll_count = $(this).scrollTop();
+					console.log("scroll :" +scroll_count);	
+					
+					$('.img1').css({
+						  'transform' : 'translate(0px, -'+ scroll_count /50 +'%)'
+						});
+						
+						$('.header-content h4').css({
+								
+							'transform' : 'translate(0px, '+ scroll_count /1 +'%)'
+							})
+							
+							$('.cation-link').css({
+								'transform' : 'translate(0px, '+ scroll_count*5 /2 +'%)'
+								})
+								
+						var boxoffset = $('.box-1').offset().top;
+						var boxoffset_2 = $('.box-2').offset().top;
+						
+						var win_h = $(window).height();
+						
+						
+						console.log("win-h" +win_h);
+						
+						if(scroll_count > boxoffset - (win_h+100))
+						{
+							
+							
+							
+							var offset =Math.min(0, scroll_count - boxoffset + win_h / 2) ;
+							
+							console.log("boxoffset :" +boxoffset);
+							console.log("offset :" +offset);
+							
+							
+							
+							$('.post-1').css({
+									 'transform': 'translate('+offset+'px, 0px)'
+								});
+								
+								$('.post-3').css({
+									 'transform': 'translate('+Math.abs(offset)+'px, 0px)'
+								});
+								
+								$('.post-2').css({
+									 'transform': 'translate( 0px,'+Math.abs(offset)/2+'px)'
+								});
+						}
+						
+						
+						if(scroll_count > boxoffset - (win_h))
+						{
+							
+							
+							
+							var offset =Math.min(0, scroll_count - boxoffset_2 + win_h / 2) ;
+							
+							console.log("boxoffset :" +boxoffset);
+							console.log("offset :" +offset);
+							
+							
+							
+							$('.post-4').css({
+									 'transform': 'translate('+Math.abs(offset)+'px, '+Math.abs(offset)+'px)'
+								});
+								
+								$('.post-6').css({
+									 'transform': 'translate('+(offset)+'px, '+Math.abs(offset)+'px)',
+									 'position' : 'relative'
+								});
+								
+								$('.post-5').css({
+									 'transform': 'translate( 0px,'+Math.abs(offset)/2+'px)',
+									 'position' : 'relative'
+								});
+						}
+						
+						
+				
+				})
+			
+        </script>
+
+
+</body>
+</html>

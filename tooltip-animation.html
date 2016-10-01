@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<style>
+*
+{
+	
+}
+
+body
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	background-color: #CCC;
+}
+.btn {
+    background-color: #03A9F4;
+    color: white;
+    border: 1px solid #05a1e8;
+    font-size: 14px;
+    padding: 7px 15px;
+    border-bottom: 2px solid #0086c3;
+    cursor: pointer;
+	position:relative;
+	display:inline-block;
+	text-decoration:none
+}
+.btn .tooltip {
+    position: absolute;
+    display: block;
+    background-color: rgba(80, 79, 79, 0.95);
+    max-width: 146px;
+    padding: 6px 7px;
+    bottom: 43px;
+    left: -50%;
+    right: -50%;
+    margin: 0 auto;
+    border-radius: 2px;
+	display:none;
+}
+.btn .tooltip:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #585757;
+    border-width: 9px;
+    margin-left: -9px;
+}
+.btn .tooltip.show
+{
+	display:block;
+	animation:myanimation 600ms ease-in-out normal forwards;
+	transform-origin:bottom center
+}
+.box {
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 13px 10px -7px #adadad;
+}
+.is-animate
+{
+	animation-play-state:paused;
+}
+@keyframes myanimation
+{
+	0%
+	{
+		opacity:0;
+		transform: scale(.7) translateY(30px) rotate(-15deg)
+		
+	}
+
+	50%
+	{
+		transform:  rotate(12deg)
+	}
+	80%
+	{
+		transform:  rotate(-10deg)
+	}
+	
+	100%
+	{
+		opacity:1;
+		transform:scale(1) translateY(0px) rotate(0deg)
+
+	}
+	
+}
+
+</style>
+
+</head>
+
+<body>
+	
+    
+   		<div class="box">
+        	<p>Click on Button To show Tooltip</p>
+            
+            <a href="#" class="btn">Tooltip <span class="tooltip">A Nice Tooltip !</span></a>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+			$('.btn').on('click', function(){
+				$('.tooltip').toggleClass('show');
+				})
+		</script>
+</body>
+</html>

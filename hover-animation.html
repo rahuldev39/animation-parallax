@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<style>
+*
+{
+	
+}
+body
+{
+	background-color: #CCC;
+	font-size:12px;
+	font-family:Verdana, Geneva, sans-serif
+}
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+nav
+{
+	
+}
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    border-radius: 2px;
+    text-align: center;
+}
+nav > ul > li {
+    flex: 1;
+    padding: 17px 0px;
+    font-size: 13px;
+    border-left: 1px solid #f0eded;
+	position:relative;
+	cursor:pointer
+}
+nav > ul > li:hover ul
+{
+	display:block;	
+}
+nav > ul > li ul {
+    display: none;
+    position: absolute;
+   
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    padding: 0px;
+    list-style-type: none;
+    text-align: left;
+}
+nav > ul > li ul li {
+    padding: 11px 12px;
+    border-bottom: 1px solid #353535;
+    font-size: 12px; 
+	background-color: #353535;
+    color: white;
+	opacity:0;
+	
+}
+nav > ul > li ul li:nth-child(1)
+{
+	animation:myanimation 300ms ease-in-out 0s  normal forwards ;
+}
+nav > ul > li ul li:nth-child(2)
+{
+	animation:myanimation 500ms ease-in-out 0s  normal forwards ;
+}
+nav > ul > li ul li:nth-child(3)
+{
+	animation:myanimation 800ms ease-in-out 0s  normal forwards ;
+}
+nav > ul > li ul li:nth-child(4)
+{
+	animation:myanimation 1200ms ease-in-out 0s  normal forwards ;
+}
+nav > ul > li:hover ul li {
+	opacity:1
+}
+
+@keyframes myanimation
+{
+	0%
+	{
+		opacity:0;
+		-webkit-transform:rotatex(-90deg) translateY(30px);
+		transform:rotatex(-90deg) translateY(30px);
+			
+	}
+
+	100%
+	{
+		opacity:1;
+		-webkit-transform:rotatex(0deg) translateY(0px);
+		transform:rotatex(0deg) translateY(0px);
+
+	}
+	
+}
+
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+    		<nav>
+            	<ul>
+                	<li>Style 1
+                    	<ul class="dd-1">
+                        	<li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                        </ul>
+                    </li>
+                    <li>Style 2
+                    	<ul class="dd-2">
+                        	<li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                        </ul>
+                    </li>
+                    <li>Style 3
+                    <ul class="dd-3">
+                        	<li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                        </ul>
+                    </li>
+                    <li>Style 4
+                    	<ul class="dd-4">
+                        	<li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                            <li>itms list</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

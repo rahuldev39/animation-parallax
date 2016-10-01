@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scrolling animation</title>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<style>
+*
+{
+	margin:0px;
+	padding:0px;	
+}
+html
+{
+	
+}
+body {
+    background-color: #eaeaea;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+}
+
+.text-center
+{
+	text-align:center;
+}
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+header {
+    height: 550px;
+    background-color: #282626;
+	background-image: url(https://unsplash.it/g/1000/600?random);
+	position:relative;
+	background-repeat:repeat-y;
+	background-position:center 0px
+}
+header:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.69);
+    z-index: 1;
+}
+.header-content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	position:relative;
+	z-index:100
+}
+.header-content img
+{
+	border-radius:50%;
+	margin:30px 20px;	
+}
+.header-content h4 {
+    color: white;
+    font-size: 26px;
+}
+section
+{
+	background-color:#FFF;
+	padding:15px;
+	height:700px;
+}
+.cation-link {
+    display: inline-block;
+    background-color: #FF9800;
+    padding: 7px 15px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 39px;
+}
+.animate-arrow
+{
+	position:relative;
+	font-size:25px;
+	animation:arrow 800ms ease-in-out 0s infinite;
+}
+@keyframes arrow
+{
+	0%
+	{
+		transform:translateY(7px)
+	}
+	50%
+	{
+		transform:translateY(0px)
+	}
+	100%
+	{
+		transform:translateY(7px)
+	}
+}
+</style>
+</head>
+
+<body>
+ 		<div class="wrapper">
+        	<header>
+            	<div class="header-content">
+                	
+                    <h4>Background Parallax</h4>
+                    
+                </div>
+            </header>
+            
+            <section class="text-center">
+            	<h4>Scroll Space . Scroll Down</h4>
+                <i class="fa fa-angle-double-down animate-arrow" aria-hidden="true"></i>
+            </section>
+        
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        	
+        <script>
+		$(window).scroll(function(){
+			
+			var scroll_count = $(window).scrollTop();
+			
+			$('header').css({'background-position' : 'center -'+scroll_count/2+'px'});
+			
+			})
+			
+			
+        </script>
+
+
+</body>
+</html>

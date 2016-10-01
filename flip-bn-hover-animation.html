@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<style>
+*
+{
+	
+}
+body {
+    background-color: #eaeaea;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+}
+.wrapper {
+    
+}
+.container {
+    background-color: white;
+    padding: 17px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0px 3px 2px 1px rgba(205, 205, 205, 0.68);
+}
+.heading {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.text-center
+{
+	text-align:center;
+}
+.btn-wrapper
+{
+	max-width: 200px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+.btn-wrapper:hover
+{
+	
+}
+.btn-wrapper a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.btn-top {
+	color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #03A9F4;
+    transform-origin: top left;
+	transition:all ease-in-out 300ms;
+	transform:rotateX(0deg) translateY(0px);
+	-webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.btn-bottom {
+	color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #FF5722;
+	transform:rotateX(90deg) translateY(0px);
+	transform-origin:top center;
+	transition:all ease-in-out 300ms;
+	-webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.btn-wrapper:hover .btn-top
+{
+	transform:rotateX(-90deg) translateY(2px);
+}
+.btn-wrapper:hover .btn-bottom
+{
+	transform:rotateX(0deg) translateY(-36px);
+}
+
+ 
+</style>
+</head>
+
+<body>
+
+		<div class="container">
+        	<div class="heading"><h4>Flip Button Animation</h4></div>
+            <div class="text-center">
+            	<div class="btn-wrapper">
+                	<a href="#" class="btn-top">Hover me for animation</a>
+                    <a href="#" class="btn-bottom">Have a nice day !</a>
+                </div>
+                
+               
+            </div>
+        </div>
+    
+		
+    
+    
+    
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        </script>
+
+
+</body>
+</html>

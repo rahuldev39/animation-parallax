@@ -1,0 +1,407 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<style>
+*
+{
+	box-sizing:border-box
+	
+}
+html {
+    background: -webkit-radial-gradient(#fff176, #f57f17);
+    background: radial-gradient(#fff176, #f57f17);
+    min-height: 100%;
+    font-family: "Roboto", sans-serif;
+}
+body
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF8F00;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 10px 20px;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #FF6F00;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 20px 0;
+    cursor: pointer;
+}
+label:first-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.text-center {
+  text-align: center;
+}
+.pagination {
+    height: 45px;
+    background: white;
+    border-bottom: 1px solid #ebebeb;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fdfdfd;
+}
+.wizard-close .pagination span
+{
+	background: rgba(0, 0, 0, 0.4);
+  background: #FF8F00;
+}
+.complete-msg
+{
+	display:none;
+}
+
+.wizard-close .complete-msg {
+    display: block;
+    text-align: center;
+   
+    font-size: 14px;
+    padding: 40px;
+    box-shadow: 0px 25px 10px -14px #e98b1b;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    background-color: #ffffff;
+	animation:msg-box 600ms ease-in-out forwards;
+}
+.pagination span {
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pagination span.is-active {
+  background: rgba(0, 0, 0, 0.4);
+  background: #FF8F00;
+}
+.icon i
+ {
+    font-size: 122px;
+    margin-bottom: 16px;
+    color: #6f6e6d;
+}
+.btn, .btn-prev, .btn-resart {
+    background-color: #ff8f00;
+    color: white;
+    border: 1px solid #ea8504;
+    font-size: 14px;
+    padding: 7px 15px;
+    border-bottom: 2px solid #df7f04;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    min-width: 101px;
+    border-radius: 4px;
+}
+.box {
+    max-width: 600px;
+    margin: 40px auto;
+}
+.modal-body {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 25px 10px -14px #e98b1b;
+	 -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+.modal-body > div
+{
+	max-width: 400px;
+	margin: 0 auto;
+}
+ul.wizard {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 0px;
+	-webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.wizard-close ul.wizard
+{
+	display:none;
+}
+ul.wizard li
+{
+	display:none
+	
+}
+ul.wizard li.is-showing
+{
+	display:block
+}
+.animate-in
+{
+	 -webkit-animation: in 500ms ease-in-out forwards;
+          animation: in 500ms ease-in-out forwards;
+ 
+}
+.animate-out
+{
+	animation: out 600ms ease-in-out 0s normal forwards;
+}
+.final-step
+{
+	animation: final 600ms ease-in-out 0s normal forwards;
+}
+@keyframes in
+{
+	0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@keyframes out
+{
+	0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: translateY(800px) rotate(10deg);
+            transform: translateY(800px) rotate(10deg);
+  }	
+}
+
+@keyframes final
+{
+  0% {
+	  opacity:1;
+	  transform:scaleY(1)
+   
+  }
+  
+  100% {
+	  opacity:0;
+    transform:scaleY(0)
+  }	
+}
+@keyframes msg-box
+{
+	0%
+	{
+		opacity:0;
+		transform:rotateX(90deg)
+		
+	}
+	100%
+	{
+		opacity:1;
+		transform:rotateX(0deg)
+	}
+}
+</style>
+
+</head>
+
+<body>
+	
+    
+   		<div class="box">
+        
+        	<div class="pagination">
+            	
+            </div>
+        	<ul class="wizard">
+            
+            	<li class="is-showing modal-body "> 
+                	<div class="modal-body-step-1">
+                      <div class="title">Step 1</div>
+                      <div class="description">Hello there, Let's play a game.</div>
+                      <form>
+                        <input type="text" placeholder="Name"/>
+                        <input type="email" placeholder="Email"/>
+                        <div class="text-center">
+                          <a href="#" class="btn">Next</a>
+                        </div>
+                      </form>
+                    </div>
+                </li>
+                
+                <li class="modal-body"> 
+                	<div class=" modal-body-step-2">
+                      <div class="title">Step 2</div>
+                      <div class="description">Would you rather</div>
+                      <form>
+                        <label>
+                          <input type="radio" name="radio"/>live one life that lasts 1,000 years?
+                        </label>
+                        <label>
+                          <input type="radio" name="radio" id="radio2"/>live 10 lives that last 100 years each?
+                        </label>
+                        <div class="text-center fade-in">
+                           <a href="#" class="btn-prev">Prev</a>
+                           <a href="#" class="btn">Next</a>
+                        </div>
+                      </form>
+                    </div>
+                </li>
+                
+                <li class="modal-body"> 
+                	<div class=" modal-body-step-3">
+                      <div class="title">Step 3</div>
+                      	<div class="icon"><i class="fa fa-gamepad" aria-hidden="true"></i></div>
+                      <div class="description">Check your email for the game results.</div>
+                      <div class="text-center">
+                      	<a href="#" class="btn-prev">Prev</a>
+                        <a href="#" class="btn">Next</a>
+                      </div>
+                    </div>
+                </li>
+                 
+                <li class="modal-body"> 
+                	<div class=" modal-body-step-4">
+                      <div class="title">Step 4</div>
+                      <div class="icon"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
+                      <div class="description">Final Step.</div>
+                      <div class="text-center">
+                        <a href="#" class="btn">Done</a>
+                      </div>
+                    </div>
+                </li>
+                
+            </ul>
+            
+            <div class="complete-msg">
+            	<p>Congratulation Wizrad Complete</p>	
+                <a href="" class="btn-resart">Resart Wizard</a>
+            </div>
+            
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+					var n = $( '.wizard li' ).length;
+					
+					for(i = 0; i < n; i++)
+					{
+						$('.pagination').append("<span> </span>");
+					}
+					$( ".pagination span" ).first().addClass( "is-active" );
+					
+			//Next Button Action		
+			$('.btn').on('click', function(){
+					
+					var $btn = $(this);
+					$step = $btn.parents('li');
+					//find out the index of li
+					stepIndex = $step.index();
+					//find out the pagination with same index of li
+					$pag = $('.pagination span').eq(stepIndex);
+					
+					if(stepIndex < n-1)
+					{
+					// animate the step out
+		  			$step.addClass('animate-out');
+						
+						setTimeout(
+							function(){
+							$step.removeClass('animate-out is-showing').next().addClass('animate-in is-showing');
+							$pag.removeClass('is-active').next().addClass('is-active');
+							},600);
+							
+							// after the animation, adjust the classes
+						  setTimeout(function(){
+							  $step.next().removeClass('animate-in');	
+						      }, 1200);
+					 }
+					
+					else
+					{
+						$step.addClass('final-step');
+						setTimeout(function(){
+							  $('.box').addClass('wizard-close');
+						      }, 600);
+						
+					}
+				})
+				
+				
+				//Pev Button Action
+				$('.btn-prev').on('click', function(){
+					
+					var $btn = $(this);
+					$step = $btn.parents('li');
+					//find out the index of li
+					stepIndex = $step.index();
+					//find out the pagination with same index of li
+					$pag = $('.pagination span').eq(stepIndex);
+					
+					// animate the step out
+		  			$step.addClass('animate-out');
+						
+						setTimeout(
+							function(){
+							$step.removeClass('animate-out is-showing').prev().addClass('animate-in is-showing');
+							$pag.removeClass('is-active').prev().addClass('is-active');
+							},600);
+							
+							// after the animation, adjust the classes
+						  setTimeout(function(){
+							  $step.next().removeClass('animate-in');	
+						      }, 1200);
+				})
+		</script>
+</body>
+</html>

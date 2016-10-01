@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<style>
+*
+{
+	
+}
+.wrapper {
+    background-color: #f6f6f6;
+    padding: 20px;
+    border: 1px solid #dcdbdb;
+}
+.control-animation
+{
+	text-align:center;
+	margin-top:20px;
+}
+.control-animation a {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+.animate-box
+{
+	width:100px;
+	height:100px;
+	background-color:#099;
+	margin:0 auto;
+	border-radius:50%;
+	border: 5px solid white;
+	position:relative;
+	left:0px;
+	top:0px;
+	box-shadow: 0px 0px 0px 2px #ece5e5;
+	animation:myanimation 2s ease-in-out 0s  infinite alternate;
+	
+	/*
+	animation-name:	myanimation;
+	animation-duration:2s;
+	animation-timing-function:ease-in-out;
+	animation-delay:0s;
+	animation-iteration-count:infinite;
+	animation-direction:normal;
+	*/
+}
+.is-animate
+{
+	animation-play-state:paused;
+}
+@keyframes myanimation
+{
+	0%
+	{
+		background-color:red;
+		left:0px;
+		
+	}
+
+	30%
+	{
+		background-color:green;
+		left:100px;
+		
+	}
+	60%
+	{
+		background-color:gray;
+	}
+	100%
+	{
+		left:-100px;
+		background-color:blue;
+
+	}
+	
+}
+
+</style>
+
+</head>
+
+<body>
+	<div class="wrapper">
+    	<div class="animate-box">
+        </div>
+    </div>
+    
+    <div class="control-animation">
+        	<a href="#" class="anim-btn">Play/Pause Animation</a>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+		$('.anim-btn').on('click', function(){
+			$('.animate-box').toggleClass('is-animate');
+			})
+        </script>
+</body>
+</html>

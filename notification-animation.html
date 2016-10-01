@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<style>
+*
+{
+	
+}
+body
+{
+	background-color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:13px;
+}
+.wrapper {
+    background-color: #f6f6f6;
+    padding: 20px;
+    border: 1px solid #dcdbdb;
+}
+.img-wrapper
+{
+	text-align:center;
+	margin-top:20px;
+}
+.img-wrapper img {
+    border: 8px solid #d8cdcd;
+	margin-bottom:10px;
+}
+
+.animate-box
+{
+	width:100px;
+	height:100px;
+	background-color:#099;
+	margin:0 auto;
+	border-radius:50%;
+	border: 5px solid white;
+	position:relative;
+	left:0px;
+	top:0px;
+	box-shadow: 0px 0px 0px 2px #ece5e5;
+	animation:myanimation 2s ease-in-out 0s  infinite alternate;
+	
+	/*
+	animation-name:	myanimation;
+	animation-duration:2s;
+	animation-timing-function:ease-in-out;
+	animation-delay:0s;
+	animation-iteration-count:infinite;
+	animation-direction:normal;
+	*/
+}
+
+.notification {
+    display: none;
+    max-width: 300px;
+    margin: 0 auto;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+	opacity:0
+}
+.is-animate
+{
+	display:flex !important;
+	animation: myanimation 550ms cubic-bezier(0.04, 0.65, 0.33, 1.27) 100ms normal forwards;
+}
+.n-icon {
+    padding: 9px 13px;
+    background-color: #FF9800;
+    color: white;
+}
+.n-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+    background-color: #5e5c5c;
+    color: white;
+}
+@keyframes myanimation
+{
+	0%
+	{
+		opacity:0;
+		top:-100px;
+		transform:rotateX(90deg);
+		
+
+		
+	}
+
+	45%
+	{
+		transform:rotateX(-90deg);
+	}
+	100%
+	{
+		opacity:1;
+		top:15px;
+		transform:rotateX(0deg);
+
+	}
+	
+}
+
+</style>
+</head>
+
+<body>
+
+	<div class="img-wrapper">
+    	<a href="#" class="img-box">
+        	<img src="http://placekitten.com/200/300">
+        </a>	
+        <p>Click On Image To show Notification</p>
+    </div>
+    
+	<div class="notification">
+    	<div class="n-icon"><i class="fa fa-bell" aria-hidden="true"></i></div>
+        <div class="n-text"><span>This is simple notification</span></div>
+    </div>
+    
+    
+    
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+		$('.img-box').on('click', function(){
+			$('.notification').toggleClass('is-animate');
+			})
+        </script>
+
+
+</body>
+</html>
